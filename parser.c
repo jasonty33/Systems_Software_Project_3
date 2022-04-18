@@ -30,6 +30,32 @@ void printparseerror(int err_code);
 void printsymboltable();
 void printassemblycode();
 
+// errors:
+// 1. program isn't closed by "."
+// 2. ident is missing after "var" or "," in var-declaration, or after "procedure" in procedure-declaration
+// 3. multiple variables with the same name on same lexical level
+// 4. array size ISN'T a single nonzero number
+// 5. ] doesn't come after [ (maybe use a stack)
+// 6. symbols aren't separated by a com
+// 7. var line doesn't end with a ";"
+// 8. procedure line doesn't end with a ";"
+// 9. procedure is assigned/read/used in arithmetic
+// 10. identifier doesn't exist in declaration
+// 11. variable is used as an array when it's not
+// 12. array is used as a single symbol when it's not
+// 13. operator is missing
+// 14. register space overflow (max reg size = 10)
+// 15. procedure isn't called (or call doesn't have procedure)
+// 16. statement in begin-end doesn't end with a semicolon
+// 17. begin doesn't have an end
+// 18. if doesn't have a "?" 
+// 19. do doesn't have a while
+// 20. read doesn't have a var/array identifier
+// 21. comparing operator is missing
+// 22. arithmetic problem
+// 23. ( doesn't have a )
+// 24. procedure (or something else weird) in arithmetic 
+
 instruction *parse(lexeme *list, int printTable, int printCode)
 {
 	// set up program variables
