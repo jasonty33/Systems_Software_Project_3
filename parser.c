@@ -16,8 +16,13 @@ symbol *table;
 int tIndex;
 
 
+//* Adds instruction to code Array
 void emit(int opname, int reg, int level, int mvalue);
+
+//* Adds a new symbol to the table
 void addToSymbolTable(int k, char n[], int s, int l, int a, int m);
+
+//*
 void mark();
 int multipledeclarationcheck(char name[]);
 int findsymbol(char name[], int kind);
